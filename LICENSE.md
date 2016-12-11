@@ -1,5 +1,7 @@
 MIT License
 
+Copyright (c) 2016 0xReki <mail@0xReki.de>
+
 Copyright (c) 2016 Wayou Liu
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
