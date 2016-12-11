@@ -1,8 +1,9 @@
 /**
  * An audio spectrum visualizer built with HTML5 Audio API
- * Author:Wayou
+ * Author: 0xReki
+ * Author: Wayou
  * License: MIT
- * Feb 15, 2014
+ * 2016-12-08
  */
 window.onload = function() {
     new Visualizer().ini();
@@ -158,20 +159,21 @@ Visualizer.prototype = {
             cwidth = canvas.width,
             capHeight = 2,
             cheight = canvas.height - capHeight,
-            capStyle = '#fff',
-            meterNum = 128, //count of the meters
+            capStyle = '#B23F3F',
+            meterNum = 48,//64, //count of the meters
             gap = 2, //gap between meters
             meterWidth = (cwidth - gap) / meterNum - gap, //width of the meters in the spectrum
-            lowFrequencyOffset = 3 * meterNum/8, //cut some lower frequencies for aesthetic reasons
+            lowFrequencyOffset = 3 * meterNum / 8,//cut some lower frequencies for aesthetic reasons
             capYPositionArray = []; //store the vertical position of the caps for the previous frame
+        
         ctx = canvas.getContext('2d'),
-        gradient = ctx.createLinearGradient(0, 0, 0, 300);
-        gradient.addColorStop(1, '#0f0');
-        gradient.addColorStop(0.5, '#ff0');
-        gradient.addColorStop(0, '#f00');
-
+        gradient = ctx.createLinearGradient(0, 0, 0, cheight);
+        gradient.addColorStop(1, '#8F3267');
+        gradient.addColorStop(0.5, '#B23F3F');
+        gradient.addColorStop(0, '#FFD7D7');
+        
         analyser.fftSize = 32768/2;
-
+        
         var drawMeter = function() {
             var array = new Uint8Array(analyser.frequencyBinCount);
             analyser.getByteFrequencyData(array);
@@ -218,7 +220,7 @@ Visualizer.prototype = {
             return;
         };
         this.status = 0;
-        var text = 'HTML5 Audio API showcase | An Audio Viusalizer';
+        var text = '';
         document.getElementById('fileWrapper').style.opacity = 1;
         document.getElementById('info').innerHTML = text;
         instance.info = text;
