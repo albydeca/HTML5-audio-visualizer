@@ -5,9 +5,5 @@ An audio spectrum visualizer built with HTML5 Audio API
 
 Demo
 ---
-[See it in action](http://wayou.github.io/HTML5_Audio_Visualizer/).
+[See it in action](https://www.0xreki.de/post/2016/12/09-HTML5-audio-visualizer/).
 
-Screen Capture
----
-
-![alt tag](https://raw.github.com/Wayou/HTML5_Audio_Visualizer/master/sources/screencapture.png)
