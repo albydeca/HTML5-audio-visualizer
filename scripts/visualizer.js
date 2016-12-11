@@ -3,7 +3,7 @@
  * Author: 0xReki
  * Author: Wayou
  * License: MIT
- * 2016-12-08
+ * 2016-12-11
  */
 window.onload = function() {
     new Visualizer().ini();
