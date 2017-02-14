@@ -54,7 +54,7 @@ Visualizer.prototype = {
                     //the sound is still playing but we upload another file, so set the forceStop flag to true
                     that.forceStop = true;
                 };
-                document.getElementById('fileWrapper').style.opacity = 1;
+                document.getElementById('fileWrapper').style.opacity = 0;
                 that._updateInfo('Uploading', true);
                 //once the file is ready,start the visualizer
                 that._start();
@@ -150,7 +150,7 @@ Visualizer.prototype = {
         };
         this._updateInfo('Playing ' + this.fileName, false);
         this.info = 'Playing ' + this.fileName;
-        document.getElementById('fileWrapper').style.opacity = 0.2;
+        document.getElementById('fileWrapper').style.opacity = 0.0;
         this._drawSpectrum(analyser);
     },
     _drawSpectrum: function(analyser) {
@@ -159,7 +159,7 @@ Visualizer.prototype = {
             cwidth = canvas.width,
             capHeight = 2,
             cheight = canvas.height - capHeight,
-            capStyle = '#B23F3F',
+            capStyle = '#1616a3',//B23F3F
             meterNum = 48,//64, //count of the meters
             gap = 2, //gap between meters
             meterWidth = (cwidth - gap) / meterNum - gap, //width of the meters in the spectrum
@@ -168,9 +168,9 @@ Visualizer.prototype = {
         
         ctx = canvas.getContext('2d'),
         gradient = ctx.createLinearGradient(0, 0, 0, cheight);
-        gradient.addColorStop(1, '#8F3267');
-        gradient.addColorStop(0.5, '#B23F3F');
-        gradient.addColorStop(0, '#FFD7D7');
+        gradient.addColorStop(1, '#323b8f'); // 8F3267
+        gradient.addColorStop(0.5, '#443eb2'); //B23F3F
+        gradient.addColorStop(0, '#d7d7ff'); // FFD7D7
         
         analyser.fftSize = 32768/2;
         
